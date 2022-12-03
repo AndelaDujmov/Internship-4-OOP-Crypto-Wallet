@@ -1,5 +1,7 @@
 ﻿using CryptoWallet;
 
+namespace CryptoWallet;
+
 class Program
 {
     static void Main(string[] args)
@@ -12,6 +14,11 @@ class Program
         choice = Console.ReadLine();
         Console.WriteLine("Sign out? (y/n)");
         choice = Console.ReadLine();
+
+        CryptoWallet wallet = new BitcoinWallet();
+        CryptoWallet wallet2 = new SolanaWallet();
+        CryptoWallet wallet3 = new SolanaWallet();// kreiranje walleta (ABSTRAKCIJA)
+        
     }
 }
 

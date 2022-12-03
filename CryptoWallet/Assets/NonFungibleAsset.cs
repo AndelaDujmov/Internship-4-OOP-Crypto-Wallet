@@ -1,15 +1,16 @@
 namespace CryptoWallet;
 
-public class NonFungibleAsset
+public class NonFungibleAsset:Asset
 {
-    public Guid Address { get; }
-    public string Name { get; set; }
-    public Decimal Value { get; set; }
-
-    public NonFungibleAsset(string name, Decimal value)
+    protected Guid FungibleAssetAddress { get; }
+    
+    public NonFungibleAsset(string name, decimal value, Guid fungibleAssetAddress):base(name, value)
     {
-        Address = Guid.NewGuid();
-        Name = name;
-        Value = value;
+        FungibleAssetAddress = fungibleAssetAddress;
+    }
+
+    public override string ToString()
+    {
+        return base.ToString();
     }
 }

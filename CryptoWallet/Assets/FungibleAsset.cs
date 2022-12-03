@@ -1,17 +1,17 @@
 namespace CryptoWallet;
 
-public class FungibleAsset
+public class FungibleAsset:Asset
 {
-    public Guid Address { get; }
-    public string Name { get; set; } //need to be unique
     public string Label { get; set; }
-    
-    public Decimal Value { get; private set; }
 
-    public FungibleAsset(string name, string label)
+    public FungibleAsset(string name, string label, decimal value) : base(name, value)
     {
-        Address = Guid.NewGuid();
         Name = name;
         Label = label;
+    }
+
+    public override string ToString()
+    {
+        return base.ToString();
     }
 }

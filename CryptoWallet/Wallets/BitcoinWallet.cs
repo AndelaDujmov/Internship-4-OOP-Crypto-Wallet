@@ -1,6 +1,11 @@
+using CryptoWallet.Interfaces;
+
 namespace CryptoWallet;
 
-public class BitcoinWallet:CryptoWallet
+public sealed class BitcoinWallet:CryptoWallet, IFungibleInteraction
 {
-  
+    public override string ToString()
+    {
+        return base.ToString();
+    }
 }
