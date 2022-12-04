@@ -10,5 +10,7 @@ public sealed class SolanaWallet:CryptoWallet, IFungibleInteraction, INonFungibl
         base.Print();
     }
 
+    
+
     public List<Guid> AddressesOfNonFungibleAssets { get; set; }
 }

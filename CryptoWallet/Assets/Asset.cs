@@ -12,6 +12,24 @@ public abstract class Asset
         Name = name;
         Value = value;
     }
+
+    public Guid GetId()
+    {
+        return Address;
+    }
+
+    public decimal GetValue()
+    {
+        return Value;
+    }
+
+    public bool FindAssetByID(Guid id)
+    {
+        if (id.Equals(Address))
+            return true;
+        return false;
+    }
+
     public override string ToString()
     {
         return base.ToString();

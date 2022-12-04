@@ -10,5 +10,7 @@ public sealed class EthereumWallet:CryptoWallet, IFungibleInteraction, INonFungi
         base.Print();
     }
 
+    
+
     public List<Guid> AddressesOfNonFungibleAssets { get; set; }
 }

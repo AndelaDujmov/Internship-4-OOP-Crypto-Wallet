@@ -2,14 +2,13 @@
 
 namespace CryptoWallet;
 
+
 class Program
 {
-    static void Main(string[] args)
+
+    public static void CreateNewAsset()
     {
-        string? choice;
-        Console.WriteLine("Welcome to the Crypto Wallet App, your personal crypto accountant!");
-        Console.WriteLine("Don't have a personal wallet? Create one today! (y/n)");
-        choice = Console.ReadLine();
+        var choice = Console.ReadLine();
         if (choice is "y")
         {
             Console.Clear();
@@ -36,20 +35,61 @@ class Program
                     break;
                 default:
                     Console.WriteLine("You havent chose anything yet! Please try again!");
+                    MainMenu();
                     break;
             }
         }
-        Console.WriteLine("Do you already have a wallet? (y/n)");
-        choice = Console.ReadLine();
+    }
+
+    public static void ListElementsInWallet()
+    {
+        var choice = Console.ReadLine();
         if (choice is "y")
         {
-            CryptoWallet bitcoinWallet = new BitcoinWallet();
-            bitcoinWallet.Print();
+           //list all elements in each value
         }
-        Console.WriteLine("Sign out? (y/n)");
-        choice = Console.ReadLine();
+    }
 
-      
+    public static void Quit()
+    {
+        var choice = Console.ReadLine();
+        if(choice is "n")
+            MainMenu();
+        else
+        {
+            Console.WriteLine("Logging out...");
+            return;
+        }
+    }
+    
+    public static void MainMenu()
+    {
+        
+        Console.Clear();
+        Asset asset1 = new FungibleAsset("BTCBitcoin", "BTC", 2.00m);
+        Asset asset2 = new FungibleAsset("ETHEthereum", "ETH", 2.06m);
+        Asset asset3 = new FungibleAsset("USDTTether", "USDT", 2.06m);
+        Asset asset4 = new FungibleAsset("BNBBNB", "BNB", 2.06m);
+        Asset asset5 = new FungibleAsset("Cardano", "ADA", 2.06m);
+        Asset asset6 = new FungibleAsset("Polygon", "MATIC", 2.06m);
+        Asset asset7 = new FungibleAsset("Dai", "DAI", 2.06m);
+        Asset asset8 = new FungibleAsset("Litecoin", "LTC", 2.06m);
+        Asset asset9 = new FungibleAsset("Solana", "SOL", 2.06m); 
+        Asset asset10 = new FungibleAsset("Algorand", "ALGO", 2.06m);
+        
+        string? choice;
+        Console.WriteLine("Welcome to the Crypto Wallet App, your personal crypto accountant!");
+        Console.WriteLine("Don't have a personal wallet? Create one today! (y/n)");
+        CreateNewAsset();
+        Console.WriteLine("Do you already have a wallet? (y/n)");
+        ListElementsInWallet();
+        Console.WriteLine("Sign out? (y/n)");
+        Quit();
+    }
+    
+    static void Main(string[] args)
+    {
+        MainMenu();
     }
 }
 

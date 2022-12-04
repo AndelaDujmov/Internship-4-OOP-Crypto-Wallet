@@ -16,4 +16,23 @@ public abstract class CryptoWallet
     {
         Console.WriteLine($"Address: {Address}");
     }
+
+    public void ReturnTotalUSDValue(decimal number)
+    {
+        decimal total = 0;
+
+        foreach (var address in FungibleAssetBalance)
+        {
+            total += address.Quantity;
+        }
+
+        total *= number;
+
+        Console.WriteLine($"Vrijednost: {total}");
+    }
+
+    public void AddValueGuidToWallet(Guid id, int value) 
+    {
+       FungibleAssetBalance.Add((id, value));
+    }
 }
