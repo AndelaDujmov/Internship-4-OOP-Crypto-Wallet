@@ -12,8 +12,8 @@ public abstract class CryptoWallet
     {
         Address = Guid.NewGuid();
     }
-    public override string ToString()
+    public virtual void Print()
     {
-        return base.ToString();
+        Console.WriteLine($"Address: {Address}");
     }
 }

@@ -4,9 +4,10 @@ namespace CryptoWallet;
 
 public sealed class SolanaWallet:CryptoWallet, IFungibleInteraction, INonFungibleInteraction
 {
-    public override string ToString()
+    public override void Print()
     {
-        return base.ToString();
+        Console.WriteLine("Type: Solana Wallet");
+        base.Print();
     }
 
     public List<Guid> AddressesOfNonFungibleAssets { get; set; }

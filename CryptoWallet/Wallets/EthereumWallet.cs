@@ -4,9 +4,10 @@ namespace CryptoWallet;
 
 public sealed class EthereumWallet:CryptoWallet, IFungibleInteraction, INonFungibleInteraction
 {
-    public override string ToString()
+    public override void Print()
     {
-        return base.ToString();
+        Console.WriteLine("Type: Ethereum Wallet");
+        base.Print();
     }
 
     public List<Guid> AddressesOfNonFungibleAssets { get; set; }

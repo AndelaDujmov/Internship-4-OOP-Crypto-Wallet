@@ -4,8 +4,9 @@ namespace CryptoWallet;
 
 public sealed class BitcoinWallet:CryptoWallet, IFungibleInteraction
 {
-    public override string ToString()
+    public override void Print()
     {
-        return base.ToString();
+        Console.WriteLine("Type: Bitcoin Wallet");
+        base.Print();
     }
 }
