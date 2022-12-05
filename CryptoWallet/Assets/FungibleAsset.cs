@@ -15,4 +15,11 @@ public class FungibleAsset:Asset
     {
         return base.ToString();
     }
+
+    public bool IsUnique(string name)
+    {
+        if (Name.Equals(name))
+            return false;
+        return true;
+    }
 }

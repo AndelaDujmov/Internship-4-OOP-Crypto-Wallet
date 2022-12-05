@@ -22,16 +22,5 @@ public abstract class Asset
     {
         return Value;
     }
-
-    public bool FindAssetByID(Guid id)
-    {
-        if (id.Equals(Address))
-            return true;
-        return false;
-    }
-
-    public override string ToString()
-    {
-        return base.ToString();
-    }
+    
 }
